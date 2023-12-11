@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олег, сведи!</title>
+    <style>
+        @font-face {
+            font-family: "rubikmonoone";
+            src: url("./fonts/rubikmonoone/rubikmonoone-regular.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "comfortaa";
+            src: url("./fonts/comfortaa/comfortaa-variablefont_wght.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "caveat";
+            src: url("./fonts/caveat/caveat-variablefont_wght.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "poiretone";
+            src: url("./fonts/poiretone/poiretone-regular.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "russoone";
+            src: url("./fonts/russoone/russoone-regular.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "iceberg";
+            src: url("./fonts/iceberg/iceberg-regular.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <a class="site-id" href="#">
+            <img id="logo-header" src="./svg/logo-1.svg" alt="Логотип в виде окружности, похожей на виниловую пластинку с буквой С внутри и восклицательным знаком справа">
+            <h1>Олег, сведи!</h1>
+        </a>
+        <nav class="nav-bar-horizontal">
+            <a href="#">
+                <div class="nav-item">Примеры</div>
+                <div class="nav-decor">
+                    <div class="nav-decor-s">S</div>
+                    <div class="nav-decor-m">M</div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="nav-item">Отзывы</div>
+                <div class="nav-decor">
+                    <div class="nav-decor-s">S</div>
+                    <div class="nav-decor-m">M</div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="nav-item">Связь</div>
+                <div class="nav-decor">
+                    <div class="nav-decor-s">S</div>
+                    <div class="nav-decor-m">M</div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="nav-item">Био</div>
+                <div class="nav-decor">
+                    <div class="nav-decor-s">S</div>
+                    <div class="nav-decor-m">M</div>
+                </div>
+            </a>
+        </nav>
+        <img class="menu-icon" draggable="false" src="./svg/h-menu.svg" alt="Иконка меню">
+    </header>
+
+    <nav class="nav-bar-vertical">
+        <a href="#">
+            <div class="nav-item">Примеры</div>
+            <div class="nav-decor">
+                <div class="nav-decor-s">S</div>
+                <div class="nav-decor-m">M</div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">Отзывы</div>
+            <div class="nav-decor">
+                <div class="nav-decor-s">S</div>
+                <div class="nav-decor-m">M</div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">Связь</div>
+            <div class="nav-decor">
+                <div class="nav-decor-s">S</div>
+                <div class="nav-decor-m">M</div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="nav-item">Био</div>
+            <div class="nav-decor">
+                <div class="nav-decor-s">S</div>
+                <div class="nav-decor-m">M</div>
+            </div>
+        </a>
+    </nav>
+    <script>
+        const hMenu = document.querySelector('.menu-icon');
+        const navBarVertical = document.querySelector('.nav-bar-vertical');
+        const navLink = document.querySelectorAll('.nav-bar-vertical a');
+
+        hMenu.addEventListener('click'
+        , () => navBarVertical.classList.toggle('active')
+        );
+        navLink.forEach(n => n.addEventListener('click'
+        , () => navBarVertical.classList.remove('active')
+        ));
+    </script>
+
+    <section class="hero-section hero-1">
+        <h2 class="line-1">Пишу</h2>
+        <h2 class="line-2">картины</h2>
+        <h2 class="line-3">звуком.</h2>
+    </section>
+    <section class="hero-section hero-2">
+        <h2 class="line-1">Толкаю</h2>
+        <h2 class="line-3">фейдеры.</h2>
+    </section>
+    <section class="hero-section hero-3">
+        <h2 class="line-1">Изгибаю</h2>
+        <h2 class="line-3">кривые.</h2>
+    </section>
+    <section class="hero-section hero-4">
+        <h2 class="line-1">Достигаю</h2>
+        <h2 class="line-3">насыщения</h2>
+        <h2 class="line-2">звука.</h2>
+    </section>
+    
+</body>
+</html>

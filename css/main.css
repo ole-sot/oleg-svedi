@@ -1,0 +1,239 @@
+html {
+    font-size: 36%;
+}
+
+body {
+    /* Color Palette */
+    --bg-color: rgba(81, 111, 161, 1);
+    --bg-color-darker: rgba(57, 95, 140, 0.8);
+    --txt-color: rgba(255, 245, 218, 1);
+    --txt-color-tr: rgba(255, 245, 218, 0.8);
+    --accent-big: rgba(251, 203, 0, 1);
+    --accent-big-tr: rgba(251, 203, 0, 0.8);
+    --accent-samall: rgba(254, 99, 1, 1);
+    --accent-samall-tr: rgba(254, 99, 1, 0.8);
+
+    background-color: var(--bg-color);
+    color: var(--txt-color-tr);
+    font-family: "comfortaa", Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1224px;
+}
+
+header,
+.hero-section,
+.player-section,
+.quote-section,
+.socials-section,
+footer {
+    padding: 0 5%;
+    display: flex;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+h1 {
+    font-family: 'rubikmonoone';
+    color: var(--txt-color);
+    font-size: 3.2rem;
+    max-width: 20rem;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Header */
+
+header {
+    background-color: var(--bg-color-darker);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted var(--accent-samall-tr);
+}
+
+.site-id {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#logo-header {
+    width: 7.8rem;
+    height: 7.8rem;
+}
+
+.nav-bar-horizontal {
+    display: flex;
+    font-family: 'comfortaa';
+    font-size: 3.2rem;
+    color: var(--txt-color-tr);
+    gap: 2rem;
+}
+
+.nav-decor {
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.nav-decor-s {
+        color: var(--txt-color-tr);
+    }
+
+.nav-decor-m {
+        color: var(--accent-samall-tr);
+    }
+
+@media (hover: hover) {
+    
+    .nav-bar-horizontal a:hover {
+        color: var(--txt-color);
+    }
+    .nav-bar-horizontal a:hover .nav-decor .nav-decor-s {
+        color: var(--accent-big-tr);
+    }
+
+    .nav-bar-horizontal a:hover .nav-decor .nav-decor-m {
+        color: var(--txt-color-tr);
+    }
+
+    .nav-bar-vertical a:hover {
+        color: var(--txt-color);
+    }
+    .nav-bar-vertical a:hover .nav-decor .nav-decor-s {
+        color: var(--accent-big-tr);
+    }
+
+    .nav-bar-vertical a:hover .nav-decor .nav-decor-m {
+        color: var(--txt-color-tr);
+    }
+
+}
+
+@media (width <= 600px) {
+
+    .nav-bar-horizontal {
+        display: none;
+    }
+
+}
+
+.menu-icon {
+    width: 7.8rem;
+    pointer-events: fill;
+    cursor: pointer;
+}
+
+.nav-bar-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (width > 600px) {
+
+    .menu-icon {
+        display: none;
+    }
+
+}
+
+.nav-bar-vertical {
+    display: none;
+    float: right;
+    max-width: fit-content;
+    font-size: 3.2rem;
+    text-align: right;
+    margin: 1rem 0;
+    padding: 0 5%;
+}
+
+.nav-bar-vertical.active {
+    display: flex;
+}
+
+@media (width > 600px) {
+
+    .nav-bar-vertical.active {
+        display: none;
+    }
+
+}
+
+.nav-bar-vertical a {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-bar-vertical a .nav-decor {
+    float: right;
+    margin: 0 0 0 1rem;
+}
+
+/* Убрать выделение в меню. Настроить реакции тача */
+
+/* Hero section */
+
+.hero-section {
+    font-size: 3.2rem;
+    flex-direction: column;
+    padding: 5%;
+    border-bottom: 1px dotted var(--accent-samall-tr);
+}
+
+/* .hero-1 {
+    display: none;
+} */
+
+.hero-2 {
+    display: none;
+}
+
+.hero-3 {
+    display: none;
+}
+
+.hero-4 {
+    display: none;
+}
+
+.hero-section .line-1 {
+    font-family: 'caveat';
+    font-size: 16rem;
+    padding-left: 15%;
+}
+
+.hero-section .line-2 {
+    font-family: 'poiretone';
+    font-size: 16rem;
+    color: var(--txt-color);
+    padding-left: 35%;
+}
+
+.hero-section .line-3 {
+    font-family: 'russoone';
+    font-size: 16rem;
+    color: var(--accent-big);
+    padding-left: 20%;
+}
+
