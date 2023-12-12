@@ -187,6 +187,18 @@ header {
     margin: 0 0 0 1em;
 }
 
+.menu-icon.x-menu {
+    display: none;
+    width: 32px;
+}
+
+.menu-icon.h-menu.inactive {
+    display: none;
+}
+
+.menu-icon.x-menu.active {
+    display: block;
+}
 /* Убрать выделение в меню. Настроить реакции тача */
 
 /* Hero section */

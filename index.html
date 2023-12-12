@@ -86,7 +86,8 @@
                 </div>
             </a>
         </nav>
-        <img class="menu-icon" draggable="false" src="./svg/h-menu.svg" alt="Иконка меню">
+        <img class="menu-icon h-menu" draggable="false" src="./svg/h-menu.svg" alt="Иконка открытия меню">
+        <img class="menu-icon x-menu" draggable="false" src="./svg/x-menu.svg" alt="Иконка закрытия меню">
     </header>
 
     <nav class="nav-bar-vertical">
@@ -120,15 +121,30 @@
         </a>
     </nav>
     <script>
-        const hMenu = document.querySelector('.menu-icon');
+        const hMenu = document.querySelector('.menu-icon.h-menu');
+        const xMenu = document.querySelector('.menu-icon.x-menu');
         const navBarVertical = document.querySelector('.nav-bar-vertical');
         const navLink = document.querySelectorAll('.nav-bar-vertical a');
 
         hMenu.addEventListener('click'
-        , () => navBarVertical.classList.toggle('active')
+        , () => {navBarVertical.classList.toggle('active')
+                 hMenu.classList.toggle('inactive')
+                 xMenu.classList.toggle('active')
+                }
         );
+
+        xMenu.addEventListener('click'
+        , () => {navBarVertical.classList.remove('active')
+                 hMenu.classList.remove('inactive')
+                 xMenu.classList.remove('active')
+                }
+        );
+        
         navLink.forEach(n => n.addEventListener('click'
-        , () => navBarVertical.classList.remove('active')
+        , () => {navBarVertical.classList.remove('active')
+                 hMenu.classList.remove('inactive')
+                 xMenu.classList.remove('active')
+                }
         ));
     </script>
 
