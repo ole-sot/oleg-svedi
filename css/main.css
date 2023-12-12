@@ -43,7 +43,7 @@ h1 {
     font-family: 'rubikmonoone';
     color: var(--txt-color);
     font-size: 3.2rem;
-    max-width: 20rem;
+    max-width: 6em;
     margin: 0;
 }
 
@@ -71,13 +71,13 @@ header {
 
 .site-id {
     display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
+    gap: 1em;
+    margin: 1em 0;
 }
 
-#logo-header {
-    width: 7.8rem;
-    height: 7.8rem;
+.logo-header {
+    width: 40px;
+    /* height: 7.8em; */
 }
 
 .nav-bar-horizontal {
@@ -85,15 +85,15 @@ header {
     font-family: 'comfortaa';
     font-size: 3.2rem;
     color: var(--txt-color-tr);
-    gap: 2rem;
+    gap: 1em;
 }
 
 .nav-decor {
     display: flex;
     font-size: 1.4rem;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    gap: 1em;
+    margin-top: 0.5em;
 }
 
 .nav-decor-s {
@@ -112,7 +112,6 @@ header {
     .nav-bar-horizontal a:hover .nav-decor .nav-decor-s {
         color: var(--accent-big-tr);
     }
-
     .nav-bar-horizontal a:hover .nav-decor .nav-decor-m {
         color: var(--txt-color-tr);
     }
@@ -123,23 +122,20 @@ header {
     .nav-bar-vertical a:hover .nav-decor .nav-decor-s {
         color: var(--accent-big-tr);
     }
-
     .nav-bar-vertical a:hover .nav-decor .nav-decor-m {
         color: var(--txt-color-tr);
     }
 
 }
 
-@media (width <= 600px) {
-
+@media (max-width: 600px) {
     .nav-bar-horizontal {
         display: none;
     }
-
 }
 
 .menu-icon {
-    width: 7.8rem;
+    width: 35px;
     pointer-events: fill;
     cursor: pointer;
 }
@@ -147,10 +143,10 @@ header {
 .nav-bar-vertical {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1em;
 }
 
-@media (width > 600px) {
+@media (min-width: 600px) {
 
     .menu-icon {
         display: none;
@@ -164,7 +160,7 @@ header {
     max-width: fit-content;
     font-size: 3.2rem;
     text-align: right;
-    margin: 1rem 0;
+    margin: 1em 0;
     padding: 0 5%;
 }
 
@@ -172,12 +168,10 @@ header {
     display: flex;
 }
 
-@media (width > 600px) {
-
+@media (min-width: 600px) {
     .nav-bar-vertical.active {
         display: none;
     }
-
 }
 
 .nav-bar-vertical a {
@@ -187,7 +181,7 @@ header {
 
 .nav-bar-vertical a .nav-decor {
     float: right;
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 1em;
 }
 
 /* Убрать выделение в меню. Настроить реакции тача */
@@ -195,10 +189,39 @@ header {
 /* Hero section */
 
 .hero-section {
-    font-size: 3.2rem;
+
+    --hero-font-size: 16rem;
+    
+    font-size: var(--hero-font-size);
     flex-direction: column;
     padding: 5%;
     border-bottom: 1px dotted var(--accent-samall-tr);
+}
+
+@media (max-width: 824px) {
+    .hero-section {
+        --hero-font-size: 14rem;
+    }
+}
+@media (max-width: 740px) {
+    .hero-section {
+        --hero-font-size: 12rem;
+    }
+}
+@media (max-width: 600px) {
+    .hero-section {
+        --hero-font-size: 9rem;
+    }
+}
+@media (max-width: 490px) {
+    .hero-section {
+        --hero-font-size: 7.5rem;
+    }
+}
+@media (max-width: 520px) {
+    .hero-section {
+        --hero-font-size: 6rem;
+    }
 }
 
 /* .hero-1 {
@@ -219,20 +242,20 @@ header {
 
 .hero-section .line-1 {
     font-family: 'caveat';
-    font-size: 16rem;
+    font-size: var(--hero-font-size);
     padding-left: 15%;
 }
 
 .hero-section .line-2 {
     font-family: 'poiretone';
-    font-size: 16rem;
+    font-size: var(--hero-font-size);
     color: var(--txt-color);
     padding-left: 35%;
 }
 
 .hero-section .line-3 {
     font-family: 'russoone';
-    font-size: 16rem;
+    font-size: var(--hero-font-size);
     color: var(--accent-big);
     padding-left: 20%;
 }
