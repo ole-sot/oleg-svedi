@@ -315,7 +315,7 @@ header {
 .music-title {
     font-size: 2.8rem;
     text-align: center;
-    margin: 1em;
+    margin: 10% 0 0 0;
 }
 
 .music-title h3 {
@@ -366,12 +366,80 @@ header {
     border-radius: 1.8rem;
 }
 
+.volume-fader {
+    position: relative;
+}
+
+.fader-line {
+    position: inherit;
+    width: 2.5em;
+    z-index: 2;
+}
+
+.fader-slider {
+    position: absolute;
+    left: -10%;
+    bottom: 50%;
+    width: 3em;
+    z-index: 3;
+}
+
+.fader-glow {
+    position: absolute;
+    right: 9%;
+    top: -8%;
+    width: 2em;
+    height: 16em;
+    background: #fff;
+    mix-blend-mode: screen;
+    opacity: 0.2;
+    filter: blur(30px);
+    border-radius: 30px;
+    z-index: 1;
+}
+
+
 .player-buttons {
+    position: relative;
     align-self: center;
+}
+
+.player-buttons button {
+    position: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 2;
+}
+
+.player-buttons button img {
+    width: 3.8em;
+}
+
+.transport-glow {
+    /* display: none; */
+    position: absolute;
+    right: -10%;
+    top: 10%;
+    width: 12em;
+    height: 2em;
+    background: #fff;
+    mix-blend-mode: screen;
+    opacity: 0.35;
+    filter: blur(40px);
+    border-radius: 30px;
+    z-index: 1;
 }
 
 .timecode {
     align-self: center;
+    background: #555555;
+    color: var(--accent-big-tr);
+    font-family: 'iceberg';
+    font-size: 4.8rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 2.5%;
+    margin: 5% 0 10% 0;
 }
 
 /* Testimonials */
