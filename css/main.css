@@ -363,6 +363,7 @@ header {
 
 .album-cover {
     width: 10em;
+    filter: grayscale();
     border-radius: 1.8rem;
 }
 
@@ -444,3 +445,44 @@ header {
 
 /* Testimonials */
 
+.quote-section {
+    margin: 5% 0;
+}
+
+.artist-photo {
+    aspect-ratio: 1/1;
+    width: 8em;
+    background: no-repeat center/130% url('../img/artist-photos/squidward-plays-clarinet.webp');
+    filter: grayscale();
+    border-radius: 1.8rem;
+    align-self: center;
+}
+
+.artist-name-role-project h3 {
+    font-size: 2.8rem;
+    color: var(--txt-color);
+    text-align: center;
+    margin: 5% 0 0 0;
+}
+
+.role-project {
+    display: flex;
+    justify-content: center;
+    gap: 1.5%;
+    font-size: 2.4rem;
+}
+
+.artist-role {
+    margin: 0;
+}
+
+.artist-project {
+    margin: 0;
+    color: var(--accent-samall);
+}
+
+.artist-quote {
+    font-size: 4rem;
+    text-align: end;
+    margin: 5% 0;
+}
