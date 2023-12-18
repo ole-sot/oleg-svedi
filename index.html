@@ -53,8 +53,11 @@
 <body>
     <header>
         <a class="site-id" href="#">
-            <img class="logo-header" src="./svg/logo-1.svg" alt="Логотип в виде окружности, похожей на виниловую пластинку с буквой С внутри и восклицательным знаком справа">
-            <h1>Олег, сведи!</h1>
+            <div class="logo-container">
+                <object class="logo-header" type="image/svg+xml" data="./svg/logo-1.svg"></object>
+                <!-- <img class="logo-header" src="./svg/logo-1.svg" alt="Логотип в виде окружности, похожей на виниловую пластинку с буквой С внутри и восклицательным знаком справа"> -->
+                <h1>Олег, сведи!</h1>
+            </div>
         </a>
         <nav class="nav-bar-horizontal">
             <a href="#">
@@ -210,15 +213,20 @@
             </nav>
             <img class="album-cover" src="./img/album-covers/cover-1.png" alt="Обложка альбома">
             <div class="volume-fader">
-                <img class="fader-line" src="./svg/fader-line.svg" alt="Линия фейдера">
-                <img class="fader-slider" src="./svg/fader-slider.svg" alt="Ползунок фейдера">
+                <object class="fader-line" type="image/svg+xml" data="./svg/fader-line.svg"></object>
+                <object class="fader-slider" type="image/svg+xml" data="./svg/fader-slider.svg"></object>
+                <!-- <img class="fader-line" src="./svg/fader-line.svg" alt="Линия фейдера"> -->
+                <!-- <img class="fader-slider" src="./svg/fader-slider.svg" alt="Ползунок фейдера"> -->
                 <div class="fader-glow"></div>
             </div>
             </div>
             <div class="player-buttons">
-                <button class="previous-song"><img src="./svg/backward-btn.svg" alt="Кнопка переключения на предыдущий трек"></button>
+                <button class="previous-song"><object type="image/svg+xml" data="./svg/backward-btn.svg"></object></button>
+                <button class="play-pause"><object type="image/svg+xml" data="./svg/play-btn.svg"></object></button>
+                <button class="next-song"><object type="image/svg+xml" data="./svg/forward-btn.svg"></object></button>
+                <!-- <button class="previous-song"><img src="./svg/backward-btn.svg" alt="Кнопка переключения на предыдущий трек"></button>
                 <button class="play-pause"><img src="./svg/play-btn.svg" alt="Кнопка проигрывания и паузы"></button>
-                <button class="next-song"><img src="./svg/forward-btn.svg" alt="Кнопка переключения на следующий трек"></button>
+                <button class="next-song"><img src="./svg/forward-btn.svg" alt="Кнопка переключения на следующий трек"></button> -->
                 <div class="transport-glow"></div>
             </div>
             <div class="timecode">00:00:00</div>
@@ -234,7 +242,7 @@
                 </div>
             </div>
             <div class="artist-glow"></div>
-            <p class="artist-quote">Всё звучит именно так, как я себе представлял. Спасибо!</p>
+            <p class="artist-quote">Всё звучит именно так, как я себе представлял и даже лучше. Спасибо!</p>
         </section>
     </div>
 
@@ -248,7 +256,19 @@
     </section>
 
     <article class="about-me">
-
+        <div class="bio">
+            <div class="portrait-of-oleg"></div>
+            <p>Родился в РСФСР в Воронеже мальчик, дали ему имя Олег. Водили его родители на творческие кружки, в школу. Потом он поступил в институт, вырос, выучился, а решил заняться музыкой. С тех пор и продолжает, да в услужение народу музыкальному сводит песни.</p>
+            <div class="oleg-glow"></div>
+        </div>
     </article>
+
+    <footer>
+        <a class="site-id" href="#">
+            <object class="logo-footer" type="image/svg+xml" data="./svg/logo-1.svg"></object>
+            <!-- <img class="logo-footer" src="./svg/logo-1.svg" alt="Логотип в виде окружности, похожей на виниловую пластинку с буквой С внутри и восклицательным знаком справа"> -->
+            <h1>Олег, сведи!</h1>
+        </a>
+    </footer>
 </body>
 </html>
