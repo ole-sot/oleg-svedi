@@ -67,6 +67,8 @@ li {
 header {
     justify-content: space-between;
     align-items: center;
+    background: var(--bg-color-darker);
+    border-radius: 0 0 1.8rem 1.8rem;
     border-bottom: 1px dotted var(--accent-samall-tr);
 }
 
@@ -310,7 +312,6 @@ header {
 .player-and-testimonials {
     justify-content: space-between;
     flex-wrap: wrap;
-    border-bottom: 1px dotted var(--accent-samall-tr);
 }
 
 .player-section,
@@ -319,6 +320,21 @@ header {
     font-size: 2.8rem;
     min-width: 20em;
     max-width: 20em;
+}
+
+@media (max-width: 420px) {
+    .player-section,
+    .quote-section {
+        min-width: 18em;
+        max-width: 18em;
+}
+}
+@media (max-width: 370px) {
+    .player-section,
+    .quote-section {
+        min-width: 16em;
+        max-width: 16em;
+}
 }
 
 /* Player */
@@ -528,7 +544,7 @@ header {
         font-size: 3.6rem;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .artist-quote {
         font-size: 3rem;
     }
@@ -539,6 +555,8 @@ header {
 .socials-section {
     justify-content: center;
     background: var(--bg-color-darker);
+    border-radius: 1.8rem;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.25);
     border-bottom: 1px dotted var(--accent-samall-tr);
 }
 
@@ -635,10 +653,10 @@ header {
         font-size: 3rem;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 420px) {
     .portrait-of-oleg {
-        min-width: 20em;
-        max-height: 30em;
+        min-width: 10em;
+        max-height: 20em;
     }
     .bio p {
         font-size: 2.6rem;
