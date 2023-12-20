@@ -7,7 +7,11 @@ const btnNext = document.querySelector('.next-song');
 const artistName = document.querySelector('.artist-name');
 const songName = document.querySelector('.song-name');
 const cover = document.querySelector('.album-cover');
-const fader = document.querySelector('.fader-slider');
+const slider = document.querySelector('#line-for-time');
+const thumb = document.querySelector('.slider-thumb');
+const progress = document.querySelector('.progress');
+const faderLine = document.querySelector('#line-for-fader');
+const faderKnob = document.querySelector('.fader-knob');
 const timecode = document.querySelector('.timecode');
 
 let trackPlaying = false;
@@ -41,9 +45,19 @@ playBtn.addEventListener('click', playTrack);
 function playTrack() {
     if (trackPlaying === false) {
         audio.play();
+        playBtn.innerHTML = `
+        <span class="material-symbols-outlined">
+            pause
+        </span>
+        `;
         trackPlaying = true;
     } else {
         audio.pause();
+        playBtn.innerHTML = `
+        <span class="material-symbols-outlined">
+            play_arrow
+        </span>
+        `;
         trackPlaying = false;
     };
 }
@@ -58,28 +72,41 @@ const trackSrc = audioFiles[trackID];
 
 function loadTrack() {
     audio.src = audioFiles[trackID];
+
     audio.load();
+
     artistName.innerHTML = artists[trackID];
     songName.innerHTML = tracks[trackID];
     cover.src = covers[trackID];
+    progress.style.width = 0;
+    thumb.style.left = 0;
 }
+
+audio.addEventListener('loadeddata', () => {
+    // Set max value to slider
+    slider.setAttribute('max', audio.duration);
+});
 
 loadTrack();
 
 btnPrev.addEventListener('click', () => {
     trackID--;
+
     if (trackID < 0) {
         trackID = audioFiles.length - 1;
     };
+
     loadTrack();
     switchTrack();
 });
 
 function nextTrack() {
     trackID++;
+
     if (trackID > audioFiles.length - 1) {
         trackID = 0;
     };
+
     loadTrack();
     switchTrack();
 }
@@ -99,14 +126,47 @@ function setTime(output, input) {
     };
 }
 
+// setTime(fullTime, audio.duration);
+
 audio.addEventListener('timeupdate', () => {
     const currentAudioTime = Math.floor(audio.currentTime);
+    const timePercentage = (currentAudioTime / audio.duration) * 100 + '%';
+
     setTime(timecode, currentAudioTime);
+
+    progress.style.width = timePercentage;
+    thumb.style.left = timePercentage;
 });
 
-let bottomValue;
+function handleSlider() {
+    const val = (slider.value / audio.duration) * 100 + '%';
 
-function moveFader() {
-    const volumeValue = (fader.style.bottom.replace('%', '0') / 10) / 50;
-    audio.volume = volumeValue;
+    progress.style.width = val;
+    thumb.style.left = val;
+
+    setTime(timecode, slider.value);
+
+    audio.currentTime = slider.value;
 }
+
+handleSlider();
+
+slider.addEventListener('input', handleSlider);
+
+let volVal;
+
+function respondToFader() {
+    // const volumeValue = (fader.style.bottom.replace('%', '0') / 10) / 50;
+    // audio.volume = volumeValue;
+    const maxVal = faderLine.getAttribute('max');
+
+    volVal = (faderLine.value / maxVal) * 100 + '%';
+
+    faderKnob.style.bottom = volVal;
+
+    audio.volume = faderLine.value / 100;
+}
+
+respondToFader();
+
+faderLine.addEventListener('input', respondToFader);

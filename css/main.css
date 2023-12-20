@@ -62,6 +62,14 @@ li {
     list-style: none;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 /* Header */
 
 header {
@@ -342,6 +350,8 @@ header {
 /* Player */
 
 .player-section {
+    --slider-width: 0.4em;
+    
     background: var(--bg-color-darker);
     border-radius: 2.3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -405,21 +415,41 @@ header {
 
 .volume-fader {
     position: relative;
+    margin-right: 5%;
 }
 
 .fader-line {
     position: inherit;
-    width: 2.5em;
+    writing-mode: vertical-lr;
+    /* width: 0.4em; */
+    height: 18em;
     z-index: 2;
 }
 
-.fader-slider {
-    position: absolute;
-    left: -10%;
-    /* bottom: 50%; */
-    width: 3em;
-    z-index: 3;
+#line-for-fader {
+    width: var(--slider-width);
+    /* z-index: 4; */
 }
+
+.volume-fader .fader-knob {
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    bottom: 0%;
+    transform: translate(-50%, 50%);
+    width: 3em;
+    height: 4em;
+    background: no-repeat center/100% url('../svg/fader-slider.svg');
+    z-index: 2;
+}
+
+/* .fader-slider { */
+    /* position: absolute; */
+    /* left: -10%; */
+    /* bottom: 50%; */
+    /* width: 3em; */
+    /* z-index: 3; */
+/* } */
 
 .fader-glow {
     position: absolute;
@@ -435,19 +465,126 @@ header {
     z-index: 1;
 }
 
+.timeline-slider {
+    /* display: flex; */
+    align-self: center;
+    /* justify-content: center; */
+    margin: 1em 0;
+    /* max-width: 16em; */
+}
+
+.range-slider {
+    display: flex;
+    position: relative;
+    user-select: none;
+    /* margin-top: 0.4em; */
+    width: 14em;
+    z-index: 2;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    /* outline: none; */
+    border-radius: 1rem;
+    background: #1f1f1f;
+    box-shadow:
+        inset 2px 2px 6px #000,
+        1px 1px 1px rgba(255, 255, 255, 0.1);
+    margin: 0;
+    /* cursor: pointer; */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 4;
+}
+
+#line-for-fader::-webkit-slider-thumb {
+    -webkit-appearance: slider-vertical;
+}
+
+#line-for-time {
+    height: var(--slider-width);
+}
+
+#line-for-time::-webkit-slider-thumb {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.timeline-slider .slider-thumb {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.2em;
+    height: 1.2em;
+    background: var(--txt-color-tr);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.timeline-slider .slider-thumb::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5em;
+    height: 0.5em;
+    background: #1f1f1f;
+    border-radius: inherit;
+    transition: 0.3s;
+}
+
+.timeline-slider
+.range-slider:hover
+.slider-thumb:before {
+    background: var(--accent-big);
+}
+
+.progress {
+    position: absolute;
+    /* left: 0; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    width: 50%;
+    height: 0.33em;
+    border-radius: 0.5rem;
+    background: var(--accent-big-tr);
+    pointer-events: none;
+    z-index: 2;
+}
 
 .player-buttons {
-    scale: 75%;
+    display: flex;
+    gap: 6%;
+    /* scale: 75%; */
     position: relative;
-    align-self: center;
+    /* align-self: center; */
+    justify-content: center;
+    margin: 1em 0;
 }
 
 .player-buttons button {
+    display: flex;
     position: inherit;
-    background: none;
-    border: none;
-    padding: 0;
+    background: var(--accent-big-tr);
+    border-radius: 1.2rem;
+    border-style: solid;
+    border-color: var(--accent-big-tr);
+    border-width: 1px;
+    font-size: 4rem;
+    padding: 0.5em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index: 3;
+}
+
+.player-buttons .play-pause {
+    background: var(--accent-samall-tr);
+    border-color: var(--accent-samall-tr);
 }
 
 /* .player-buttons button object {
@@ -456,8 +593,11 @@ header {
 
 .transport-glow {
     position: absolute;
-    right: -10%;
-    top: 10%;
+    /* right: -10%;
+    top: 10%; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 12em;
     height: 2em;
     background: #fff;
