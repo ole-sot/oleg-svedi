@@ -232,51 +232,56 @@
             </div>
             <div class="player-center-section">
                 <nav class="genre-selector">
-                <button class="genre-1">
-                    <div class="nav-item">Инди</div>
-                    <div class="nav-decor">
-                        <div class="nav-decor-s">S</div>
-                        <div class="nav-decor-m">M</div>
-                    </div>
-                </button>
-                <button class="genre-2">
-                    <div class="nav-item">Металл</div>
-                    <div class="nav-decor">
-                        <div class="nav-decor-s">S</div>
-                        <div class="nav-decor-m">M</div>
-                    </div>
-                </button>
-                <button class="genre-3">
-                    <div class="nav-item">Нойз рок</div>
-                    <div class="nav-decor">
-                        <div class="nav-decor-s">S</div>
-                        <div class="nav-decor-m">M</div>
-                    </div>
-                </button>
-                <button class="genre-4">
-                    <div class="nav-item">Эмбиент</div>
-                    <div class="nav-decor">
-                        <div class="nav-decor-s">S</div>
-                        <div class="nav-decor-m">M</div>
-                    </div>
-                </button>
-            </nav>
-            <img class="album-cover" src="./img/album-covers/cover-1.png" alt="Обложка альбома">
-            <div class="volume-fader">
-                <input class="slider fader-line" id="line-for-fader" type="range" min="0" max="100" value="60">
-                <div class="fader-knob"></div>
-                <div class="fader-glow"></div>
-                <!-- <object class="fader-line" type="image/svg+xml" data="./svg/fader-line.svg"></object>
-                <object class="fader-slider" style="bottom: 50%" type="image/svg+xml" data="./svg/fader-slider.svg"></object>
-                <div class="fader-glow"></div> -->
-            </div>
+                    <button class="genre-1">
+                        <div class="nav-item">Инди</div>
+                        <div class="nav-decor">
+                            <div class="nav-decor-s">S</div>
+                            <div class="nav-decor-m">M</div>
+                        </div>
+                    </button>
+                    <button class="genre-2">
+                        <div class="nav-item">Металл</div>
+                        <div class="nav-decor">
+                            <div class="nav-decor-s">S</div>
+                            <div class="nav-decor-m">M</div>
+                        </div>
+                    </button>
+                    <button class="genre-3">
+                        <div class="nav-item">Нойз рок</div>
+                        <div class="nav-decor">
+                            <div class="nav-decor-s">S</div>
+                            <div class="nav-decor-m">M</div>
+                        </div>
+                    </button>
+                    <button class="genre-4">
+                        <div class="nav-item">Эмбиент</div>
+                        <div class="nav-decor">
+                            <div class="nav-decor-s">S</div>
+                            <div class="nav-decor-m">M</div>
+                        </div>
+                    </button>
+                </nav>
+                <img class="album-cover" src="./img/album-covers/cover-1.png" alt="Обложка альбома">
+                <div class="fader-section">
+                    <input id="volume-fader" type="range" min="0" max="100" value="60" list="markers" orient="vertical">
+                    <datalist id="markers">
+                        <option value="75"></option>
+                    </datalist>
+                    <!-- <input class="slider fader-line" id="line-for-fader" type="range" min="0" max="100" value="60"> -->
+                    <!-- <div class="fader-knob"></div> -->
+                    <div class="fader-glow"></div>
+                    <!-- <object class="fader-line" type="image/svg+xml" data="./svg/fader-line.svg"></object>
+                    <object class="fader-slider" style="bottom: 50%" type="image/svg+xml" data="./svg/fader-slider.svg"></object>
+                    <div class="fader-glow"></div> -->
+                </div>
             </div>
             <div class="timeline-slider">
-                <div class="range-slider">
+                <input id="player-timeline" type="range" min="0" max="100" value="0">
+                <!-- <div class="range-slider">
                     <input class="slider" id="line-for-time" type="range" min="0" max="100" value="0">
                     <div class="slider-thumb"></div>
                     <div class="progress"></div>
-                </div>
+                </div> -->
             </div>
             <div class="player-buttons">
                 <button class="previous-song">
