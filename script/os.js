@@ -14,6 +14,9 @@ const faderLine = document.querySelector('#line-for-fader');
 const faderKnob = document.querySelector('.fader-knob');
 const timecode = document.querySelector('.timecode');
 
+const timeline = document.querySelector('#player-timeline');
+
+
 let trackPlaying = false;
 let volumeMuted = false;
 let trackID = 0;
@@ -39,6 +42,16 @@ const covers = [
     './img/album-covers/cover-1.png',
     './img/album-covers/cover-1.png',
 ];
+
+
+function moveTimelineProgress() {
+    const timelineVal = timeline.value;
+
+    timeline.style.background = `linear-gradient(to right, var(--accent-samall-tr) ${timelineVal}%, var(--_track-color) ${timelineVal}%)`;
+}
+
+moveTimelineProgress();
+
 
 playBtn.addEventListener('click', playTrack);
 
