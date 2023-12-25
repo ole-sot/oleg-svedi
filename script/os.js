@@ -11,9 +11,11 @@ const timecode = document.querySelector('.timecode');
 const volumeFader = document.querySelector('#volume-fader');
 const timeline = document.querySelector('#player-timeline');
 
+const genreBtns = document.querySelectorAll('.genre-selector button');
 
 let trackPlaying = false;
 let trackID = 0;
+let isToggled = true;
 
 
 /* --- Data --- */
@@ -41,6 +43,24 @@ const covers = [
 
 /* ------------ */
 
+
+function clearActive() {
+    genreBtns.forEach(btn => {
+        if (btn.classList.contains('active') === true) {
+            btn.classList.remove('active');
+        };
+    });
+}
+
+function genreToggle() {
+    if (this.classList.contains('active') === false) {
+        clearActive();
+        this.classList.toggle('active');
+        // Change playlist
+    };
+}
+
+genreBtns.forEach(btn => btn.addEventListener('click', genreToggle));
 
 playBtn.addEventListener('click', playTrack);
 

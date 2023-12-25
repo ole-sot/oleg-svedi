@@ -385,6 +385,17 @@ header {
     cursor: pointer;
 }
 
+.genre-selector button:active .nav-item,
+.genre-selector button.active .nav-item {
+    color: var(--txt-color);
+}
+.genre-selector button.active .nav-decor-s {
+    color: var(--accent-big-tr);
+}
+.genre-selector button.active .nav-decor-m {
+    color: var(--txt-color-tr);
+}
+
 .genre-selector button .nav-item {
     writing-mode: vertical-lr;
     rotate: 180deg;
@@ -448,7 +459,7 @@ input[type="range"] {
         inset 2px 2px 6px #000,
         1px 1px 1px rgba(255, 255, 255, 0.1);
     --_volume-length: 30rem;
-    --_fader-width: 10rem;
+    --_fader-width: 11rem;
     --_fader-height: 8rem;
     --_fader-radius: 1rem;
     --_progress-thump-width: 1.5rem;
