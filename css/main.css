@@ -450,6 +450,20 @@ header {
     }
 }
 
+.fader-glow {
+    position: absolute;
+    left: 0.3rem;
+    top: -2rem;
+    width: 30rem;
+    height: 6rem;
+    background: #fff;
+    mix-blend-mode: screen;
+    opacity: 0.35;
+    filter: blur(40px);
+    border-radius: 30px;
+    z-index: 1;
+}
+
 input[type="range"] {
     --_slider-thickness: 5rem;
     --_track-thickness: 1.2rem;
@@ -476,6 +490,7 @@ input[type="range"] {
     height: var(--_slider-thickness);
     background: transparent;
     border-radius: 32rem;
+    z-index: 2;
   }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -530,7 +545,6 @@ input[type="range"]::-moz-range-thumb {
 #player-timeline {
     width: var(--_track-width);
     height: var(--_track-thickness);
-    /* background: var(--accent-big-tr); */
     background: var(--_track-color);
     margin: 1em 0;
 }
