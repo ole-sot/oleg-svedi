@@ -47,7 +47,7 @@ const music = {
     metall: {
         audioFiles: [
             './audio/metall/01-the_revenge-grechka.mp3',
-            './audio/metall/02-anchar - cyberninja.mp3',
+            './audio/metall/02-anchar-cyberninja.mp3',
             './audio/metall/03-lne-zamok.mp3',
         ],
         tracks: [
@@ -115,8 +115,6 @@ const music = {
 /* ------------ */
 
 
-
-
 playBtn.addEventListener('click', playTrack);
 
 function playTrack() {
@@ -144,8 +142,6 @@ function switchTrack() {
         audio.play();
     };
 }
-
-const trackSrc = music[genre].audioFiles[trackID];
 
 function loadTrack() {
     audio.src = music[genre].audioFiles[trackID];
@@ -190,6 +186,44 @@ btnNext.addEventListener('click', nextTrack);
 
 audio.addEventListener('ended', nextTrack);
 
+function clearActive() {
+    genreBtns.forEach(btn => {
+        if (btn.classList.contains('active') === true) {
+            btn.classList.remove('active');
+        };
+    });
+}
+
+function selectGenre(btn) {
+    switch (btn.classList[0]) {
+        case 'genre-1':
+            genre = 'indie';
+            break;
+        case 'genre-2':
+            genre = 'metall';
+            break;
+        case 'genre-3':
+            genre = 'noiserock';
+            break;
+        case 'genre-4':
+            genre = 'ambient';
+            break;
+    };
+}
+
+function switchGenre() {
+    if (this.classList.contains('active') === false) {
+        clearActive();
+        this.classList.toggle('active');
+        selectGenre(this);
+        trackID = 0;
+        loadTrack();
+        switchTrack();
+    };
+}
+
+genreBtns.forEach(btn => btn.addEventListener('click', switchGenre));
+
 function moveTimelineProgress() {
     if (audio.currentTime > 0) {
         const currentAudioTime = Math.round(audio.currentTime);
@@ -231,53 +265,12 @@ handleSlider();
 
 timeline.addEventListener('input', handleSlider);
 
-let volVal;
-
 function respondToFader() {
     const maxVal = volumeFader.getAttribute('max');
 
-    volVal = (volumeFader.value / maxVal) * 100 + '%';
-    audio.volume = volumeFader.value / 100;
+    audio.volume = volumeFader.value / maxVal;
 }
 
 respondToFader();
 
 volumeFader.addEventListener('input', respondToFader);
-
-function clearActive() {
-    genreBtns.forEach(btn => {
-        if (btn.classList.contains('active') === true) {
-            btn.classList.remove('active');
-        };
-    });
-}
-
-function selectGenre(btn) {
-    switch (btn.classList[0]) {
-        case 'genre-1':
-            genre = 'indie';
-            break;
-        case 'genre-2':
-            genre = 'metall';
-            break;
-        case 'genre-3':
-            genre = 'noiserock';
-            break;
-        case 'genre-4':
-            genre = 'ambient';
-            break;
-    };
-}
-
-function switchGenre() {
-    if (this.classList.contains('active') === false) {
-        clearActive();
-        this.classList.toggle('active');
-        selectGenre(this);
-        trackID = 0;
-        loadTrack();
-        switchTrack();
-    };
-}
-
-genreBtns.forEach(btn => btn.addEventListener('click', switchGenre));
