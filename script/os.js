@@ -274,3 +274,21 @@ function respondToFader() {
 respondToFader();
 
 volumeFader.addEventListener('input', respondToFader);
+
+
+/*** Hero section ***/
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // console.log(entry);
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        };
+    });
+});
+
+const heroElements = document.querySelectorAll('.hero-section');
+
+heroElements.forEach((el) => observer.observe(el));
