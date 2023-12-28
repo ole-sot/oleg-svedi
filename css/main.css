@@ -237,6 +237,7 @@ header {
     border-bottom: 1px dotted var(--accent-samall-tr);
     opacity: 0;
     transition: all 1s;
+    display: none;
 }
 
 .hero-section.show {
@@ -307,20 +308,20 @@ header {
     }
 }
 
-/* .hero-1 {
-    display: none;
-} */
-
-.hero-2 {
-    display: none;
+.hero-1.display {
+    display: flex;
 }
 
-.hero-3 {
-    display: none;
+.hero-2.display {
+    display: flex;
 }
 
-.hero-4 {
-    display: none;
+.hero-3.display {
+    display: flex;
+}
+
+.hero-4.display {
+    display: flex;
 }
 
 .hero-section .line-1 {

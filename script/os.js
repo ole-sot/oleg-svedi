@@ -292,3 +292,26 @@ const observer = new IntersectionObserver((entries) => {
 const heroElements = document.querySelectorAll('.hero-section');
 
 heroElements.forEach((el) => observer.observe(el));
+
+// function toggleDisplay(el) {
+//     const elToggle = el.classList.toggle('display');
+//     setTimeout(elToggle, 3000);
+// }
+
+// heroElements.forEach((el) => toggleDisplay(el));
+
+// function sleep(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+//   }
+
+function toggleDisplay(el) {
+    el.classList.toggle('display');
+}
+
+for (let i = 1; i < heroElements.length; i++) {
+    const currEl = heroElements[i];
+    const prevEl = heroElements[i-1];
+    // sleep(3000 * i).then(() => toggleDisplay(el));
+    setTimeout(toggleDisplay, 3000 * i, currEl);
+    setTimeout(toggleDisplay, 3000 * i, prevEl);
+};
