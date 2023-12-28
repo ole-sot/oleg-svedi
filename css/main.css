@@ -15,7 +15,7 @@ body {
 
     background-color: var(--bg-color);
     color: var(--txt-color-tr);
-    font-family: "comfortaa", Arial, sans-serif;
+    /* font-family: "comfortaa", Arial, sans-serif; */
     margin: 0 auto;
     max-width: 1024px;
 }
@@ -42,7 +42,7 @@ img {
 }
 
 h1 {
-    font-family: 'rubikmonoone';
+    /* font-family: 'rubikmonoone', Arial, sans-serif; */
     color: var(--txt-color);
     font-size: 3.2rem;
     max-width: 6em;
@@ -103,7 +103,7 @@ header {
 
 .nav-bar-horizontal {
     display: flex;
-    font-family: 'comfortaa';
+    /* font-family: 'comfortaa'; */
     font-size: 3.2rem;
     color: var(--txt-color-tr);
     gap: 1em;
@@ -226,6 +226,15 @@ header {
 
 /*** Hero section ***/
 
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 87vh;
+    border-bottom: 1px dotted var(--accent-samall-tr);
+}
+
 .hero-section {
 
     --_hero-font-size: 16rem;
@@ -234,7 +243,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 5%;
-    border-bottom: 1px dotted var(--accent-samall-tr);
+    /* border-bottom: 1px dotted var(--accent-samall-tr); */
     opacity: 0;
     transition: all 1s;
     display: none;

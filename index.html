@@ -47,6 +47,17 @@
             font-style: normal;
             font-display: swap;
         }
+
+        body {
+            --f1-header: "rubikmonoone", Arial, sans-serif;
+            --f2-body: "comfortaa", Arial, sans-serif;
+
+            font-family: var(--f2-body);
+        }
+
+        h1 {
+            font-family: var(--f1-header);
+        }
     </style>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -199,28 +210,30 @@
         ));
     </script>
 
-    <section class="hero-section hero-1 display">
-        <h2 class="hero-line line-1">Пишу</h2>
-        <h2 class="hero-line line-2">картины</h2>
-        <h2 class="hero-line line-3">звуком.</h2>
-        <div class="screen-spot"></div>
-    </section>
-    <section class="hero-section hero-2">
-        <h2 class="hero-line line-1">Толкаю</h2>
-        <h2 class="hero-line line-3">фейдеры.</h2>
-        <div class="screen-spot"></div>
-    </section>
-    <section class="hero-section hero-3">
-        <h2 class="hero-line line-1">Изгибаю</h2>
-        <h2 class="hero-line line-3">кривые.</h2>
-        <div class="screen-spot"></div>
-    </section>
-    <section class="hero-section hero-4">
-        <h2 class="hero-line line-1">Достигаю</h2>
-        <h2 class="hero-line line-3">насыщения</h2>
-        <h2 class="hero-line line-2">звука.</h2>
-        <div class="screen-spot"></div>
-    </section>
+    <div class="hero">
+        <section class="hero-section hero-1 display">
+            <h2 class="hero-line line-1">Пишу</h2>
+            <h2 class="hero-line line-2">картины</h2>
+            <h2 class="hero-line line-3">звуком.</h2>
+            <div class="screen-spot"></div>
+        </section>
+        <section class="hero-section hero-2">
+            <h2 class="hero-line line-1">Толкаю</h2>
+            <h2 class="hero-line line-3">фейдеры.</h2>
+            <div class="screen-spot"></div>
+        </section>
+        <section class="hero-section hero-3">
+            <h2 class="hero-line line-1">Изгибаю</h2>
+            <h2 class="hero-line line-3">кривые.</h2>
+            <div class="screen-spot"></div>
+        </section>
+        <section class="hero-section hero-4">
+            <h2 class="hero-line line-1">Достигаю</h2>
+            <h2 class="hero-line line-3">насыщения</h2>
+            <h2 class="hero-line line-2">звука.</h2>
+            <div class="screen-spot"></div>
+        </section>
+    </div>
 
     <div class="player-and-testimonials">
         <section class="player-section">
