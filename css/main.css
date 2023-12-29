@@ -3,6 +3,10 @@ html {
 }
 
 body {
+    /* --- Main Fonts --- */
+    --f1-header: "rubikmonoone", Arial, sans-serif;
+    --f2-body: "comfortaa", Arial, sans-serif;
+    
     /* --- Color Palette --- */
     --bg-color: rgba(81, 111, 161, 1);
     --bg-color-darker: rgba(57, 95, 140, 0.8);
@@ -15,7 +19,7 @@ body {
 
     background-color: var(--bg-color);
     color: var(--txt-color-tr);
-    /* font-family: "comfortaa", Arial, sans-serif; */
+    font-family: var(--f2-body);
     margin: 0 auto;
     max-width: 1024px;
 }
@@ -42,7 +46,7 @@ img {
 }
 
 h1 {
-    /* font-family: 'rubikmonoone', Arial, sans-serif; */
+    font-family: var(--f1-header);
     color: var(--txt-color);
     font-size: 3.2rem;
     max-width: 6em;
@@ -63,11 +67,22 @@ li {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 0,
-  'opsz' 24
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 24
 }
 
 
@@ -231,7 +246,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 87vh;
+    height: 89vh;
     border-bottom: 1px dotted var(--accent-samall-tr);
 }
 
