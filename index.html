@@ -47,14 +47,8 @@
             font-style: normal;
             font-display: swap;
         }
-        @font-face {
-            font-family: 'Material Symbols Outlined';
-            font-style: normal;
-            src: url("fonts/material-symbols/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2") format('woff2');
-        }
     </style>
     <link rel="stylesheet" href="./css/main.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
     <script defer src="./script/os.js"></script>
 </head>
 <body>
@@ -284,19 +278,21 @@
             </div>
             <div class="player-buttons">
                 <button class="previous-song">
-                    <span class="material-symbols-outlined">
-                        skip_previous
-                    </span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 20V4L8 11.5L20 20Z" fill="black" stroke="black"/>
+                        <rect x="3" y="3" width="3" height="18" fill="black"/>
+                    </svg>
                 </button>
                 <button class="play-pause">
-                    <span class="material-symbols-outlined">
-                        play_arrow
-                    </span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 20V4L20 12L7 20Z" fill="black" stroke="black"/>
+                     </svg>
                 </button>
                 <button class="next-song">
-                    <span class="material-symbols-outlined">
-                        skip_next
-                    </span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 20V4L16 12L4 20Z" fill="black" stroke="black"/>
+                        <rect x="18" y="3" width="3" height="18" fill="black"/>
+                    </svg>
                 </button>
                 <div class="transport-glow"></div>
             </div>

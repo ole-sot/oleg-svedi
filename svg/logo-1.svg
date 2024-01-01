@@ -45,4 +45,4 @@
         <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_19" result="shape"/>
         </filter>
         </defs>
-        </svg>
+</svg>

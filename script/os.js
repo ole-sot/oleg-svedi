@@ -121,17 +121,18 @@ function playTrack() {
     if (trackPlaying === false) {
         audio.play();
         playBtn.innerHTML = `
-        <span class="material-symbols-outlined">
-            pause
-        </span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="3" width="7" height="18" fill="black"/>
+            <rect x="3" y="3" width="7" height="18" fill="black"/>
+        </svg>
         `;
         trackPlaying = true;
     } else {
         audio.pause();
         playBtn.innerHTML = `
-        <span class="material-symbols-outlined">
-            play_arrow
-        </span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 20V4L20 12L7 20Z" fill="black" stroke="black"/>
+        </svg>
         `;
         trackPlaying = false;
     };
