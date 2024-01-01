@@ -280,7 +280,6 @@ volumeFader.addEventListener('input', respondToFader);
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        // console.log(entry);
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -294,17 +293,26 @@ const heroElements = document.querySelectorAll('.hero-section');
 heroElements.forEach((el) => observer.observe(el));
 
 function playHeroes(delay = 3000) {
-    function toggleDisplay(el) {
-        el.classList.toggle('display');
+    function addDisplay(el) {
+        el.classList.add('display');
     }
 
-    for (let i = 1; i < heroElements.length; i++) {
+    function clearDisplay() {
+        heroElements.forEach(el => {
+            el.classList.remove('display');
+        });
+    }
+    
+    for (let i = 0; i < (heroElements.length); i++) {
         const currEl = heroElements[i];
-        const prevEl = heroElements[i-1];
 
-        setTimeout(toggleDisplay, delay * i, currEl);
-        setTimeout(toggleDisplay, delay * i, prevEl);
+        setTimeout(clearDisplay, delay * i);
+        setTimeout(addDisplay, delay * i, currEl);
     };
 }
 
-playHeroes();
+for (let i = 0; i < 100; i++) {
+    const dly = 4000;
+
+    setTimeout(playHeroes, dly * 5 * i, dly);
+}
