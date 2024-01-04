@@ -115,8 +115,6 @@ const music = {
 /* ------------ */
 
 
-playBtn.addEventListener('click', playTrack);
-
 function playTrack() {
     if (trackPlaying === false) {
         audio.play();
@@ -138,6 +136,11 @@ function playTrack() {
     };
 }
 
+playBtn.addEventListener('click', playTrack);
+
+navigator.mediaSession.setActionHandler('play', playTrack);
+navigator.mediaSession.setActionHandler('pause', playTrack);
+
 function switchTrack() {
     if (trackPlaying === true) {
         audio.play();
@@ -153,6 +156,16 @@ function loadTrack() {
     songName.innerHTML = music[genre].tracks[trackID];
     cover.src = music[genre].covers[trackID];
     timeline.value = 0;
+
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: music[genre].tracks[trackID],
+            artist: music[genre].artists[trackID],
+            artwork: [
+                { src: music[genre].covers[trackID], },
+            ],
+        });
+    };
 }
 
 audio.addEventListener('loadeddata', () => {
@@ -161,7 +174,7 @@ audio.addEventListener('loadeddata', () => {
 
 loadTrack();
 
-btnPrev.addEventListener('click', () => {
+function prevTrack() {
     trackID--;
 
     if (trackID < 0) {
@@ -170,7 +183,11 @@ btnPrev.addEventListener('click', () => {
 
     loadTrack();
     switchTrack();
-});
+}
+
+btnPrev.addEventListener('click', prevTrack);
+
+navigator.mediaSession.setActionHandler('previoustrack', prevTrack);
 
 function nextTrack() {
     trackID++;
@@ -184,6 +201,8 @@ function nextTrack() {
 }
 
 btnNext.addEventListener('click', nextTrack);
+
+navigator.mediaSession.setActionHandler('nexttrack', nextTrack);
 
 audio.addEventListener('ended', nextTrack);
 
@@ -316,4 +335,4 @@ for (let i = 0; i < 100; i++) {
     const dly = 4000;
 
     setTimeout(playHeroes, dly * 5 * i, dly);
-}
+};

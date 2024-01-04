@@ -4,8 +4,8 @@ html {
 
 body {
     /* --- Main Fonts --- */
-    --f1-header: "rubikmonoone", Arial, sans-serif;
-    --f2-body: "comfortaa", Arial, sans-serif;
+    --f1-header: "rubikmonoone", sans-serif;
+    --f2-body: "comfortaa", sans-serif;
     
     /* --- Color Palette --- */
     --bg-color: rgba(81, 111, 161, 1);
@@ -218,7 +218,6 @@ header {
 .menu-icon.x-menu.active {
     display: block;
 }
-/* Доработать! Убрать выделение в меню. Настроить реакции тача */
 
 
 /*** Hero section ***/
@@ -348,7 +347,13 @@ header {
 
 .player-and-testimonials {
     justify-content: space-between;
-    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .player-and-testimonials {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .player-section,
