@@ -90,9 +90,9 @@ const music = {
     },
     ambient: {
         audioFiles: [
-            './audio/ambient/Forlate - Failing Better E1_2 M1_4.wav',
-            './audio/ambient/Forlate - The Turning E1_1 M1_4.wav',
-            './audio/ambient/Forlate - Rubber E1_5 M1_8.wav',
+            './audio/ambient/Forlate - Failing Better E1_2 M1_4.mp3',
+            './audio/ambient/Forlate - The Turning E1_1 M1_4.mp3',
+            './audio/ambient/Forlate - Rubber E1_5 M1_8.mp3',
         ],
         tracks: [
             'Failing Better',
@@ -294,6 +294,16 @@ function respondToFader() {
 respondToFader();
 
 volumeFader.addEventListener('input', respondToFader);
+
+
+/*** Socials ***/
+
+const insta = document.querySelector('.insta-notification');
+const instLink = document.querySelector('#insta');
+
+instLink.addEventListener('click', () => {
+    insta.classList.toggle('show');
+});
 
 
 /*** Hero section ***/

@@ -30,6 +30,7 @@ header,
 .player-section,
 .quote-section,
 .socials-section,
+.insta-notification,
 .about-me,
 footer {
     padding: 0 5%;
@@ -386,6 +387,7 @@ header {
     border-radius: 2.3rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 5% 0;
+    max-height: 102rem;
 }
 
 .music-title {
@@ -655,8 +657,29 @@ input[type="range"]::-moz-range-thumb {
 /*** Testimonials ***/
 
 .quote-section {
+    font-size: 2.8rem;
     margin: 5% 0;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
     position: relative;
+}
+
+.quote-section :is(.testimonial.t-2, .testimonial.t-3, .testimonial.t-4, .testimonial.t-5, .testimonial.t-6) {
+    font-size: 60%;
+    margin-top: 10%;
+}
+
+.quote-section :is(.testimonial.t-4, .testimonial.t-5, .testimonial.t-6) {
+    display: none;
+}
+
+.other-testimonials {
+    display: grid;
+    grid: auto-flow dense / 1fr 1fr;
+    gap: 0 10%;
 }
 
 .artist-photo {
@@ -670,7 +693,6 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .artist-name-role-project h3 {
-    font-size: 2.8rem;
     color: var(--txt-color);
     text-align: center;
     margin: 5% 0 0 0;
@@ -680,7 +702,7 @@ input[type="range"]::-moz-range-thumb {
     display: flex;
     justify-content: center;
     gap: 1.5%;
-    font-size: 2.4rem;
+    font-size: 0.9em;
 }
 
 .artist-role {
@@ -709,7 +731,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .artist-quote {
-    font-size: 4rem;
+    font-size: 1.4em;
     text-align: end;
     margin: 5% 0;
     z-index: 2;
@@ -717,12 +739,12 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width: 600px) {
     .artist-quote {
-        font-size: 3.6rem;
+        font-size: 1.3em;
     }
 }
 @media (max-width: 420px) {
     .artist-quote {
-        font-size: 3rem;
+        font-size: 1em;
     }
 }
 
@@ -750,6 +772,7 @@ input[type="range"]::-moz-range-thumb {
 
 .social-links a {
     z-index: 2;
+    cursor: pointer;
 }
 
 .social-links a:hover {
@@ -777,6 +800,37 @@ input[type="range"]::-moz-range-thumb {
 @media (max-width: 400px) {
     .social-links {
         font-size: 3rem;
+    }
+}
+
+.insta-notification {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-color-darker);
+    font-size: 3rem;
+    padding: 5%;
+    border-radius: 1.8rem;
+    border-bottom: 1px dotted var(--accent-samall-tr);
+}
+
+.insta-notification.show {
+    display: flex;
+}
+
+.insta-notification p {
+    margin: 0;
+}
+
+.insta-notification h3 {
+    align-self: center;
+    font-size: 3.2rem;
+    margin: 3% 0 0 0;
+}
+
+@media (max-width: 400px) {
+    .insta-notification p {
+        font-size: 2.5rem;
     }
 }
 
