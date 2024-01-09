@@ -886,7 +886,7 @@ input[type="range"]::-moz-range-thumb {
     aspect-ratio: 3/4;
     min-width: 40em;
     max-height: 50em;
-    background: no-repeat center/140% url(../img/artist-photos/bio-pic.jpeg);
+    background: no-repeat center/140% url(../img/artist-photos/bio-pic.webp);
     border-radius: 1.8rem;
     z-index: 2;
 }
