@@ -723,6 +723,10 @@ input[type="range"]::-moz-range-thumb {
     z-index: 2;
 }
 
+.other-testimonials .artist-photo {
+    border-radius: 50%;
+}
+
 .artist-name-role-project h3 {
     color: var(--txt-color);
     text-align: center;
