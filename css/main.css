@@ -100,7 +100,6 @@ header {
 
 .nav-bar-horizontal {
     display: flex;
-    /* font-family: 'comfortaa'; */
     font-size: 3.2rem;
     color: var(--txt-color-tr);
     gap: 1em;
@@ -229,6 +228,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 89vh;
+    user-select: none;
     border-bottom: 1px dotted var(--accent-samall-tr);
 }
 
