@@ -658,31 +658,24 @@ input[type="range"]::-moz-range-thumb {
 /*** Testimonials ***/
 
 .quote-section {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 30%;
     overflow-x: scroll;
-    /* overflow: visible; */
-    gap: 10%;
-    /* overflow-y: hidden; */
-    /* white-space: nowrap; */
-    /* scroll-snap-align: center; */
-    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
     font-size: 2.8rem;
     margin: 5% 0;
-    /* background: var(--bg-color-darker); */
-    /* border-radius: 2.3rem; */
-    scrollbar-width: none;
-    /* scroll-snap-stop: always; */
-    /* scroll-behavior: smooth; */
 }
 
 .quote-section::-webkit-scrollbar {
     display: none;
 }
 
-.quote-break {
-    /* display: flex; */
-    /* align-items: center; */
+.quote-break,
+.quote-section .spacer {
     color: var(--accent-samall-tr);
     align-self: center;
     padding: 5%;
@@ -691,72 +684,23 @@ input[type="range"]::-moz-range-thumb {
 .testimonial {
     display: flex;
     flex-direction: column;
-    min-width: 60rem;
     position: relative;
+    scroll-snap-align: end;
     user-select: none;
-    scroll-snap-align: center;
-    /* scroll-snap-type: x mandatory; */
-    /* padding: 5% 5% 0 5%; */
-    /* transition: all 0.15s; */
 }
-
-/* .quote-section :is(.testimonial.t-2, .testimonial.t-3, .testimonial.t-4, .testimonial.t-5, .testimonial.t-6) {
-    font-size: 60%;
-    margin-top: 10%;
-} */
 
 .quote-section :is(.testimonial.t-4, .testimonial.t-5, .testimonial.t-6) {
     display: none;
 }
 
-
-
-/* .other-testimonials {
-    display: grid;
-    grid: auto-flow dense / 1fr 1fr;
-    gap: 0 10%;
-}
-
-@media screen and (hover: hover) {
-    .testimonial:hover {
-        scale: 105%;
-        background: var(--bg-color-darker);
-        border-radius: 2.3rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    .other-testimonials .testimonial:hover {
-        scale: 155%;
-        z-index: 4;
-    }
-}
-
-@media screen and (hover: hover) and (max-width: 764px) {
-    .testimonial:hover {
-        scale: 105%;
-        background: var(--bg-color-darker);
-        border-radius: 2.3rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    
-    .other-testimonials .testimonial:hover {
-        scale: 135%;
-        z-index: 4;
-    }
-} */
-
-.artist-photo {
+.testimonial > img {
     aspect-ratio: 1/1;
-    width: 8em;
-    background: no-repeat center/130% url('../img/artist-photos/squidward-plays-clarinet.webp');
+    object-fit: cover;
+    inline-size: 8em;
     filter: grayscale();
     border-radius: 1.8rem;
     align-self: center;
-    z-index: 2;
-}
-
-.other-testimonials .artist-photo {
-    border-radius: 50%;
+    /* z-index: 2; */
 }
 
 .artist-name-role-project h3 {
@@ -805,15 +749,14 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 600px) {
+    .testimonial{
+        scroll-snap-align: center;
+    }
     .artist-quote {
         font-size: 1.3em;
     }
 }
 @media (max-width: 420px) {
-    .testimonial {
-        min-width: 50rem;
-    }
-    
     .artist-quote {
         font-size: 1em;
     }
